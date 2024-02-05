@@ -7,10 +7,7 @@ import torch
 import torch.nn as nn
 
 sys.path.append("..")
-from tools import *
-
-import yaml  # for test (build model)
-import time  # for test (inference time test)
+from SRD.tools import *
 
 
 class SpeakerEncoder(nn.Module):
@@ -176,6 +173,8 @@ class ContentEncoder(nn.Module):
         dropout_rate,
     ):
         super(ContentEncoder, self).__init__()
+        self.c_in = c_in
+        self.c_bank = c_bank
         self.n_conv_blocks = n_conv_blocks
         self.subsample = subsample
         self.act = get_act_func(act)
@@ -360,32 +359,3 @@ class MAINVC(nn.Module):
     def get_speaker_embedding(self, x):
         emb = self.speaker_encoder(x)
         return emb
-
-
-"""
-#__________test__________
-with open('config.yaml') as f:
-    config = yaml.load(f, Loader=yaml.FullLoader)
-
-Es = SpeakerEncoder(**config['SpeakerEncoder'])
-Ec = ContentEncoder(**config['ContentEncoder'])
-D  = Decoder(**config['Decoder'])
-
-x = torch.randn(1, 80, 500)
-y = torch.randn(1, 80, 480)
-
-# inference time test
-start_time = time.time()
-
-cond = Es(x)
-mu = Ec(y)[0]
-dec = D(mu, cond)
-
-end_time = time.time()
-
-print(f"inference time cost: {(end_time-start_time)/100}")
-
-print(f"content embedding shape: {cond.shape}")
-print(f"speaker embedding shape: {mu.shape}}")
-print(f"converted mel shape: {dec.shape}")
-"""
