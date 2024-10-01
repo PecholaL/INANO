@@ -1,5 +1,5 @@
-# SRD_SpkAno
-Speech Representation Disentanglement-based speaker anonymization model.
+# INANO
+Instance Normalization-based Speaker Anonymization  
 
 ## Speech Representation Disentanglement
 The pre-trained model used for SRD is [MAIN-VC](https://github.com/PecholaL/MAIN-VC), which disentangles speaker representation and content representation from speech. This SpkAno model completes the generation of pseudo speaker representation and the synthesis of anonimized speech with the pseudo speaker representation.
