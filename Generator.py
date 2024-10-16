@@ -16,7 +16,7 @@ from tools import ZeroConv2d
 class Generator(nn.Module):
 
     def __init__(self, in_channels, out_channels):
-        super().__init__()
+        super(Generator, self).__init__()
         self.glow = nn.Sequential(
             nn.Conv2d(in_channels, 64, 3, padding=1),
             nn.ReLU(inplace=True),

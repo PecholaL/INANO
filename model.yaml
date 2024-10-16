@@ -1,14 +1,3 @@
-SpeakerEncoder:
-    c_in: 80
-    c_h: 64
-    c_out: 64
-    c_bank: 64
-    kernel_size: 5
-    n_conv_blocks: 6
-    n_dense_blocks: 6
-    subsample: [1, 2, 1, 2, 1, 2]
-    act: 'relu'
-    dropout_rate: 0
 ContentEncoder:
     c_in: 80
     c_h: 64
@@ -30,6 +19,5 @@ Decoder:
     act: 'relu'
     sn: False
     dropout_rate: 0
-CMI:
-    mine: 64
-    club: 64
+Generator:
+

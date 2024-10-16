@@ -1,10 +1,10 @@
-""" SRD model + Generator
+""" solver for training Generator
 """
 
 import yaml
-from SRD.model import MAINVC
+from Generator import Generator
 
+g = Generator()
 
 with open("model.yaml") as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
-SRD = MAINVC(config)
