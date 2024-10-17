@@ -1,23 +1,7 @@
-ContentEncoder:
-    c_in: 80
-    c_h: 64
-    c_out: 64
-    c_bank: 64
-    kernel_size: 5
-    n_conv_blocks: 6
-    subsample: [1, 2, 1, 2, 1, 2]
-    act: 'relu'
-    dropout_rate: 0
-Decoder:
-    c_in: 64
-    c_cond: 64
-    c_h: 64
-    c_out: 80
-    kernel_size: 5
-    n_conv_blocks: 6
-    upsample: [2, 1, 2, 1, 2, 1]
-    act: 'relu'
-    sn: False
-    dropout_rate: 0
 Generator:
+    num_channels: 64
+    num_flow: 32
+    num_scale: 3
+    crop_size: 14
+    spk_embed_dim: 256
 

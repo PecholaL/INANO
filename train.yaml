@@ -1,6 +1,4 @@
 data_loader:
-    segment_size: 128
-    frame_size: 1
     batch_size: 32
     shuffle: True
 optimizer:
@@ -10,9 +8,4 @@ optimizer:
     amsgrad: True
     weight_decay: 0.0001
     grad_norm: 5
-lambda:
-    lambda_rec: 10
-    lambda_kl: 1
-    lambda_sia: 10
-    lambda_mi: 1
-annealing_iters: 15000
+
