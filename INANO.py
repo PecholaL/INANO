@@ -9,7 +9,7 @@
 
 import yaml
 from MAIN_VC.main_vc import ContentEncoder, Decoder
-from Generator import getGlow
+from Generator import getFlow
 
 
 class INANO:

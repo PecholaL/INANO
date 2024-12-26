@@ -15,6 +15,6 @@ The Decoder which generates the Mel-spectrogram of the anonymized speech is the 
 Firstly, these files should be obtained: *attr.pkl, config.yaml, mainVcModel.ckpt, vocoder.pt*. Among them, *attr.pkl* is obtained from the data preprocess of MAIN-VC, *mainVcModel.ckpt* is obtained after MAIN-VC's training, *vocoder.pt* is available at [here](https://drive.google.com/file/d/1r0exien35ddN303dtYdCriHwDxVSFY_7/view?usp=sharing), *config.yaml* is available at [here](https://github.com/PecholaL/MAIN-VC/blob/main/config.yaml). Please modify the paths to these files according to your preparation in the main funtion of *mainvc_inf.py*. 
 
 ### Obtain Speaker Embeddings
-To obtain real speaker embeddings for generator's training, the pre-trained MAIN-VC is utilized to disentangle the speaker embeddings. Set **speech_corpus_root** and **spk_emb_dataset_path** in the *mainvc_inf.py*. Then excecute the batch process file:
-```.\1_get_spk_emb_dataset.bat```
+To obtain real speaker embeddings for generator's training, the pre-trained MAIN-VC is utilized to disentangle the speaker embeddings. Set **speech_corpus_root** and **spk_emb_dataset_path** in the *mainvc_inf.py*. Then directly excecute:
+```python mainvc_inf.py```
 to obtain speaker embedding dataset.

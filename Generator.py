@@ -52,7 +52,7 @@ def getGlowScale(channels, num_flow):
     return transforms.CompositeTransform([transforms.SqueezeTransform(), *z])
 
 
-def getGlow(num_channels, num_flow, num_scale, crop_size):
+def getFlow(num_channels, num_flow, num_scale, crop_size):
     # num_channels = 1 * 4, num_flow = 32, num_scale = 3, crop_size = 28 // 2
     transforms = transforms.MultiscaleCompositeTransform(num_scale)
     for i in range(num_scale):
