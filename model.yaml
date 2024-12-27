@@ -1,7 +1,0 @@
-Generator:
-    num_channels: 64
-    num_flow: 32
-    num_scale: 3
-    crop_size: 14
-    spk_embed_dim: 256
-

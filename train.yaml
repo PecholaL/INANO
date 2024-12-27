@@ -1,11 +1,10 @@
 data_loader:
     batch_size: 32
+    num_workers: 4
     shuffle: True
 optimizer:
     lr: 0.0005
     beta1: 0.9
     beta2: 0.999
-    amsgrad: True
+    eps: 1e-8
     weight_decay: 0.0001
-    grad_norm: 5
-

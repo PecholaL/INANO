@@ -1,5 +1,6 @@
 _TEST_ONLY_/
 .DS_Store
+_test_*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

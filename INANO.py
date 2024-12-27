@@ -1,6 +1,6 @@
 """ INANO
     * Content encoder (EncC) and decoder (Dec) are taken from VC model (AdaIN-VC/MAIN-VC)
-    * Generator (G) is based on GLOW
+    * Generator (G) is based on Glow
     ** EncC and Dec are trained via the VC model's reconstruction process
     ** G is trained on the speaker encoder dataset output by the speaker encoder of the VC model
     ! Note: All the modules mentioned above are trained and INANO only emsembles the pre-trained modules.
@@ -9,7 +9,7 @@
 
 import yaml
 from MAIN_VC.main_vc import ContentEncoder, Decoder
-from Generator import getFlow
+from Gano import getGlow
 
 
 class INANO:
@@ -21,7 +21,7 @@ class INANO:
 
         self.EncC = ContentEncoder(self.vc_config["ContentEncoder"])
         self.Dec = Decoder(self.vc_config["Decoder"])
-        self.G = getGlow(self.g_config["Generator"])
+        self.Gano = getGlow(self.g_config["Generator"])
 
     def forward(self, orig_mel):
         cnt_emb = self.EncC(orig_mel)
