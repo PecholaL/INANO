@@ -331,6 +331,11 @@ class MAINVC(nn.Module):
     def get_speaker_embedding(self, x):
         emb = self.speaker_encoder(x)
         return emb
+    
+    def inference_for_inano(self, x, ano_spk_emb):
+        mu, _ = self.content_encoder(x)
+        dec = self.decoder(mu, ano_spk_emb)
+        return dec
 
 
 """
